@@ -1,0 +1,48 @@
+﻿@model MyMoviesApp.Models.MovieType
+
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+    </head>
+<form method="post" asp-action="Update">
+    <div class="border p-3">
+        <input asp-for="Id" hidden />
+        <div class="form-group row">
+            <h2 id="a" class="p1-3">Update Movie Type</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Name" style="color:white;"></label>
+                    </div>
+         
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <input asp-for="Name" class="form-control w-100" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 text-center row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-75" value="Update" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Go Back</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

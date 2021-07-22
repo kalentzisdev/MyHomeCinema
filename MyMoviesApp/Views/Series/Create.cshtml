@@ -1,0 +1,77 @@
+﻿@model MyMoviesApp.Models.ViewModels.TypesVM
+
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+    </head>
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="p1-3">Add Tv Show</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-2" style="color:white;">
+                        <label asp-for="Series.NameS"></label>
+                    </div>
+                    <div class="col-2" style="color:white;">
+                        <label asp-for="Series.YearS"></label>
+                    </div>
+                    <div class="col-2" style="color:white;">
+                        <label asp-for="Series.statusS"></label>
+                    </div>
+                    <div class="col-2" style="color:white;">
+                        <label asp-for="Series.RatingS"></label>
+                    </div>
+                    <div class="col-2" style="color:white;">
+                        <label asp-for="Series.SeriesType"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <input asp-for="Series.NameS" class="form-control w-100" />
+                        <span asp-validation-for="Series.NameS" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="Series.YearS" class="form-control w-100" />
+                        <span asp-validation-for="Series.YearS" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <select asp-for="Series.statusS" class="form-control w-100">
+                            <option selected>Choose status</option>
+                            <option value="Watched">Watched</option>
+                            <option value="On going">On going</option>
+                            <option value="My list">On my list</option>
+                        </select>
+                        <span asp-validation-for="Series.statusS" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="Series.RatingS" class="form-control w-100" />
+                        <span asp-validation-for="Series.RatingS" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <select asp-for="Series.MovieTypeId" asp-items="@Model.TypeDropDown" class="form-control w-100">
+                            <option selected>--Select Series type--</option>
+                        </select>
+                        <span asp-validation-for="Series.MovieTypeId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 text-center row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-75" value="add Tv Show" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Go Back</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{<partial name="_ValidationScriptsPartial" />}
+}

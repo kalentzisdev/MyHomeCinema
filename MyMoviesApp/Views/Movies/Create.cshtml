@@ -1,0 +1,80 @@
+﻿@model MyMoviesApp.Models.ViewModels.TypesVM
+<head>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+</head>
+<form method="post" asp-action="Create">
+    <div class="border p-4">
+       
+        <div class="form-group row">
+            <h2 id="a" class="p1-3">Add Movie</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="Movie.NameM"></label>
+                    </div>
+                    <div class="col-2">
+                        <label asp-for="Movie.YearM"></label>
+                    </div>
+                    <div class="col-2">
+                        <label asp-for="Movie.statusM"></label>
+                    </div>
+                    <div class="col-2">
+                        <label asp-for="Movie.RatingM"></label>
+                    </div>
+                    <div class="col-2">
+                        <label asp-for="Movie.MovieType"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <input asp-for="Movie.NameM" class="form-control w-100" />
+                        <span asp-validation-for="Movie.NameM" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="Movie.YearM" class="form-control w-100" />
+                        <span asp-validation-for="Movie.YearM" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-2">
+                        <select asp-for="Movie.statusM" class="form-control w-100">
+                            <option selected>--Status--</option>
+                            <option value="Watched">Watched</option>
+                            <option value="On going">On going</option>
+                            <option value="My list">On my list</option>
+                        </select>
+                        <span asp-validation-for="Movie.statusM" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="Movie.RatingM" class="form-control w-100" />
+                        <span asp-validation-for="Movie.RatingM" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-2">
+                        <select asp-for="Movie.MovieTypeID" asp-items="@Model.TypeDropDown" class="form-control w-100" >
+                                <option selected>--Type--</option>
+                        </select>
+                        <span asp-validation-for="Movie.MovieTypeID" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 text-center row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-75" value="add movie" /> 
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Go Back</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{ 
+    @{ <partial name="_ValidationScriptsPartial"/>}
+}
+

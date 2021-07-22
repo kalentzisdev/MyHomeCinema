@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyCinemaApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+    
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable navbar-dark border-bottom box-shadow mb-3"  >
+            <div class="container" >
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyCinemaApp</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1" >
+                        <li class="nav-item">
+                            <a class="nav-link " id="nav" style="color:white" asp-controller="Home" asp-action="Index"><span>Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link "id="nav" style="color:white" asp-area="" asp-controller="Movies" asp-action="Index"><span>Movies</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="nav" style="color:white" asp-area="" asp-controller="Series" asp-action="Index"><span>Tv Shows</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="nav" style="color:white" asp-area="" asp-controller="MovieType" asp-action="Index"><span>Categories</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="nav" style="color:white" asp-area="" asp-controller="Home" asp-action="Privacy"><span>Contact</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                        <li class="nav-item col-4 col-md-auto">
+                            <a class="nav-link p-2" id="social" href="https://github.com/kalentzisdev" style="color:white" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 499.36" role="img"><title>GitHub</title><path fill="currentColor" fill-rule="evenodd" d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z"></path></svg>
+                                <small class="d-md-none ms-2">GitHub</small>
+                            </a>
+                        </li>
+
+                        <li class="nav-item col-4 col-md-auto">
+                            <a class="nav-link p-2" id="social" href="https://www.linkedin.com/in/kalentzis/" style="color:white" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 416.32" role="img"><title>Linkedin</title><path fill="currentColor" fill-rule="evenodd" d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333zM279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z"></path></svg>
+                                <small class="d-md-none ms-2">Linkedin</small>
+                            </a>
+                        </li>
+
+                        @*<li class="nav-item col-4 col-md-auto">
+                            <a class="nav-link p-2" href="https://www.facebook.com/kalentzisdev" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="navbar-nav-svg d-inline-block align-text-top" viewBox="0 0 512 512" role="img"><title>Facebook</title><path fill="currentColor" fill-rule="evenodd" d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+                                <small class="d-md-none ms-2">Facebook</small>
+                            </a>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-light">
+        <div class="container" id="con">
+            &copy; 2021 - kalentzisdev - 
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
